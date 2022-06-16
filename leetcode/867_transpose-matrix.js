@@ -1,5 +1,5 @@
 /************************
- * CURRENTLY_SOLVING
+ * ACCEPTED
  ************************/
 
 /* 
@@ -11,16 +11,18 @@ Output: [[1,4,7],[2,5,8],[3,6,9]]
 var transpose = function (matrix) {
 	const result = [];
 
-	for (let i = 0; i < matrix.length; i++) {
+	for (let i = 0; i < matrix[0].length; i++) {
 		let subArr = [];
-		for (let j = 0; j < matrix[i].length; j++) {
+		for (let j = 0; j < matrix.length; j++) {
+			//
 			subArr.push(matrix[j][i]);
 			// result.push([matrix[i][j]]);
 		}
 		result.push(subArr);
 	}
 
-	console.log(result);
+	// console.log(result);
+	return result;
 };
 
 transpose([
