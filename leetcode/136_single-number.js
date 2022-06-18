@@ -1,27 +1,42 @@
 /************************
- * UNFINISHED
+ * ACCEPTED
  ************************/
+/* 
+example 1: 
+input :[2,2,1]
+output: 1
+
+example 2: 
+input: [4, 2, 1, 2, 1]
+output: 4
+
+example 3: 
+input: [1]
+output: 1
+*/
 
 var singleNumber = function (nums) {
 	let found = nums[0];
-
-	// assume the 1st element of the array is the number
-	// then compare it with each number of the array
-	// if found any match then set the next number as `the number`
-	// loop from begining the array and find any macth
+	let was = [];
 
 	for (let i = 0; i < nums.length; i++) {
 		for (let j = 0; j < nums.length; j++) {
-			// if (nums[i] === nums[j]) continue;
+			if (i === j) continue;
 			if (nums[i] === nums[j]) {
-				found = nums[i];
+				was.push(nums[i]);
+				continue;
 			}
+			// console.log(`${nums[i]} ==> ${nums[j]}`);
 		}
+		// console.log("-----------");
 	}
-	console.log(found);
+	// console.log(was);
+
+	found = nums.filter((item) => !was.includes(item));
+	console.log(Number(found));
 	// return found
 };
-
 singleNumber([2, 2, 1]);
 singleNumber([4, 1, 2, 1, 2]);
 singleNumber([1]);
+singleNumber([3, 2, 3, 2, 4, 4, 5]);

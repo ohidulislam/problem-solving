@@ -1,3 +1,7 @@
+/************************
+ * ACCEPTED
+ ************************/
+
 var lengthOfLastWord = function (s) {
 	const newStr = s.trim().split(" ");
 	// console.log(s)
